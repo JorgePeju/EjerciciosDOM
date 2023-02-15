@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+#caja{
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+
+.borde {
+    border: 3px solid black;
+}
+
+</style>
+</head>
+<body>
+    <ul id="cosa">
+
+    </ul>
+
+    <script>
+        
+    const cosa = document.getElementById("cosa");
+
+    const arrayCosas = ["mesa", "silla", "boli", "mando"];
+
+    // por cara elemento en el array quiero crear un elemento de lista
+    // quiero crear el li
+
+    // for (let i = 0; i < arrayCosas.length; i++) {
+    //     let elementoLista=document.createElement('LI')
+    //     elementoLista.textContent=arrayCosas[i]
+    //     console.log(elementoLista)
+    //     cosa.appendChild(elementoLista)
+    // }
+
+
+    
+    const fragment = document.createDocumentFragment();
+
+    console.log(fragment)
+
+
+    for (let i = 0; i < arrayCosas.length; i++) {
+        let elementoLista=document.createElement('LI')
+         elementoLista.textContent=arrayCosas[i]
+         fragment.append(elementoLista)
+         console.log(fragment)
+ }
+
+  cosa.append(fragment)
+  console.log(fragment)
+
+  console.log(cosa.innerHTML)
+  console.log(cosa.textContent)
+
+  //cosa.innerHTML = "Otra Cosa"
+  cosa.textContent = "Otra Cosa"
+    </script>
+</body>
+</html>
